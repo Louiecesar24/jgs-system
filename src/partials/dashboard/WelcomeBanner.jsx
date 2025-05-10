@@ -120,7 +120,8 @@ function WelcomeBanner() {
 			{/* Content */}
 			<div className='relative'>
 				<h1 className='text-2xl md:text-3xl text-slate-800 dark:text-slate-100 font-bold mb-1'>
-					Good {greeting}, {cred.name}👋
+					Good {greeting}, {cred.name}🥺
+
 				</h1>
 				{cred?.branch_name && (
 					<h1 className='text-md md:text-lg text-slate-800 dark:text-slate-100 font-bold mb-1'>
