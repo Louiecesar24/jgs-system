@@ -293,12 +293,12 @@ const Inventory = () => {
 				return {
 					"Item ID": item.id,
 					"Item Name": item.item_name,
-					"Item IMEI": item.item_imei ?? "N/A",
-					"Item Serial": item.serial ?? "N/A",
-					"Remaining Stocks": item.stocks,
-					"Number of Solds": item.number_of_sold,
-					"Item Price": formatMoney(item.item_price),
-					"Item BIR Registered?": item.is_bir ? "Yes" : "No",
+					"IMEI/SN": item.item_imei ?? "N/A",
+					"Date Received": item.serial ?? "N/A",
+					"Stocks": item.stocks,
+					"Solds": item.number_of_sold,
+					"Price": formatMoney(item.item_price),
+					"BIR Registered?": item.is_bir ? "Yes" : "No",
 					Category:
 						productGroups.find((product) => product.id === item.product_id)?.[
 							"product_group"
@@ -316,10 +316,10 @@ const Inventory = () => {
 		const doc = new jsPDF();
 		const tableColumn = [
 			"Item Name",
-			"IMEI",
-			"Serial Number",
-			"Stock",
-			"Sold",
+			"IMEI/SN",
+			"Date Received",
+			"Stocks",
+			"Solds",
 			"Price",
 			"BIR Registered",
 			"Category",
