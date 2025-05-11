@@ -38,8 +38,8 @@ export const Product = ({ productData, handleGetProductGroupsAndItems }) => {
 				<h5 className='text-xl font-semibold tracking-tight text-gray-900 dark:text-white'>
 					{productData.item_name}
 				</h5>
-				<p>IMEI: {productData.item_imei ?? "N/A"}</p>
-				<p>Serial Number: {productData.serial ?? "N/A"}</p>
+				<p>IMEI/SN: {productData.item_imei ?? "N/A"}</p>
+				<p>Date Received: {productData.serial ?? "N/A"}</p>
 
 				<p>Stock: {productData.stocks}</p>
 				<span>Sold: {productData.number_of_sold}</span>

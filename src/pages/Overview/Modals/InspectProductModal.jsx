@@ -104,8 +104,8 @@ const InspectProductModal = ({ product, setIsInspectProduct }) => {
 							<h5 className='text-xl font-semibold tracking-tight text-gray-900 dark:text-white'>
 								{product.item_name}
 							</h5>
-							<p>IMEI: {product.item_imei ?? "N/A"}</p>
-							<p>Serial Number: {product.serial ?? "N/A"}</p>
+							<p>IMEI/SN: {product.item_imei ?? "N/A"}</p>
+							<p>Date Received: {product.serial ?? "N/A"}</p>
 
 							<p>Stock: {product.stocks}</p>
 							<span>Sold: {product.number_of_sold}</span>
