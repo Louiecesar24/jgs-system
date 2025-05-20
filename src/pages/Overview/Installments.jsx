@@ -383,7 +383,17 @@ function Installments() {
 				statusTables.white.push(installment);
 			// Check if the installment is due today (same day regardless of month and year)
 			}else if (installmentDay === currentDay && status === "On-going") {
-				statusTables.purple.push(installment);
+				const paymentDate = new Date(installment.payment_date);
+				paymentDate.setHours(0, 0, 0, 0);
+
+				if (paymentDate.getTime() === dueDate.getTime()) {
+					// Payment was made on the due date → move to green
+					installment.status = "Fully-paid"; // Optional, if needed
+					statusTables.green.push(installment);
+				} else {
+					// Payment not yet made → treat as due today
+					statusTables.purple.push(installment);
+				}
 			} else if (diffDays <= -7 && status === "On-going") {
 				statusTables.yellow.push(installment);
 			} else if (status === "Deposit") {
